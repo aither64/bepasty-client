@@ -19,7 +19,7 @@ module BepastyClient
 
       client = Client.new(@server, password: @password, verbose: @verbose)
       client.setup
-      
+
       if @files.empty?
         puts client.upload_io(STDIN, **@upload_opts)
       else
@@ -47,28 +47,28 @@ module BepastyClient
 
       OptionParser.new do |parser|
         parser.banner = "Usage: #{$0} [options] FILE..."
-        
+
         parser.on('-h', '--help', 'Show help message and exit') do |v|
           puts parser
           exit
         end
-        
+
         parser.on('-v', '--verbose', 'Enable verbose output') do |v|
           @verbose = true
         end
-        
+
         parser.on('-s', '--server SERVER', 'bepasty server URL') do |v|
           @server = v
         end
-        
+
         parser.on('-p', '--password PASSWORD', 'bepasty server password') do |v|
           @password = v
         end
-        
+
         parser.on('--password-file FILE', 'Read bepasty server password from a file') do |v|
           @password = File.read(v).strip
         end
-        
+
         parser.on('-f', '--filename NAME', 'File name including extension') do |v|
           @upload_opts[:filename] = v
         end
@@ -76,7 +76,7 @@ module BepastyClient
         parser.on('-t', '--content-type TYPE', 'Content mime type') do |v|
           @upload_opts[:content_type] = v
         end
-        
+
         parser.on(
           '--minute=[N]',
           OptionParser::DecimalInteger,
@@ -84,7 +84,7 @@ module BepastyClient
         ) do |v|
           @upload_opts[:max_life] = {unit: :minutes, value: v || 15}
         end
-        
+
         parser.on(
           '--hour=[N]',
           OptionParser::DecimalInteger,
@@ -92,7 +92,7 @@ module BepastyClient
         ) do |v|
           @upload_opts[:max_life] = {unit: :hours, value: v || 1}
         end
-        
+
         parser.on(
           '--day=[N]',
           OptionParser::DecimalInteger,
@@ -100,7 +100,7 @@ module BepastyClient
         ) do |v|
           @upload_opts[:max_life] = {unit: :days, value: v || 1}
         end
-        
+
         parser.on(
           '--week=[N]',
           OptionParser::DecimalInteger,
@@ -108,7 +108,7 @@ module BepastyClient
         ) do |v|
           @upload_opts[:max_life] = {unit: :weeks, value: v || 1}
         end
-        
+
         parser.on(
           '--month=[N]',
           OptionParser::DecimalInteger,
@@ -116,7 +116,7 @@ module BepastyClient
         ) do |v|
           @upload_opts[:max_life] = {unit: :months, value: v || 1}
         end
-        
+
         parser.on(
           '--forever',
           'Keep the file as long as possible',
@@ -129,12 +129,12 @@ module BepastyClient
     end
 
     def load_config
-      cfg = load_config_file('/etc/bepasty-client.yml')
+      cfg = load_config_file('/etc/ruby-bepasty-client.yml')
 
       conf_dir = ENV.fetch('XDG_CONFIG_HOME', '')
       conf_dir = File.join(Dir.home, '.config') if conf_dir.empty?
 
-      cfg.update(load_config_file(File.join(conf_dir, 'bepasty-client.yml')))
+      cfg.update(load_config_file(File.join(conf_dir, 'ruby-bepasty-client.yml')))
 
       @verbose = true if cfg[:verbose]
       @server ||= cfg[:server]

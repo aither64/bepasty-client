@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'bepasty-client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'bepasty-client'
+  spec.name          = 'ruby-bepasty-client'
   spec.version       = BepastyClient::VERSION
   spec.authors       = ['Jakub Skokan']
   spec.email         = ['jakub.skokan@vpsfree.cz']

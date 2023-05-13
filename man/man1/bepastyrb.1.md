@@ -1,14 +1,14 @@
-# bepasty 8                       2023-05-13                               1.0.0
+# bepastyrb 8                       2023-05-13                             1.0.0
 
 ## NAME
-`bepasty` - upload files to bepasty servers
+`bepastyrb` - upload files to bepasty servers
 
 ## SYNOPSIS
-`bepasty` [*options*] [*file*...]
+`bepastyrb` [*options*] [*file*...]
 
 ## DESCRIPTION
-`bepasty` uploads one or more files to bepasty servers. If no *file* is given as
-an argument, `bepasty` will read from standard input.
+`bepastyrb` uploads one or more files to bepasty servers. If no *file* is given
+as an argument, `bepastyrb` will read from standard input.
 
 bepasty server URL needs to be given using option `-s`, `--server` or can be
 set in a config file, see `CONFIG FILES`.
@@ -59,8 +59,8 @@ Config files can be used to provide default values for certain options.
 Command-line options override settings found in config files. Config files are
 read from the following locations:
 
-  - `/etc/bepasty-client.yml`
-  - `$XDG_CONFIG_HOME/bepasty-client.yml` or `~/.config/bepasty-client.yml`
+  - `/etc/ruby-bepasty-client.yml`
+  - `$XDG_CONFIG_HOME/ruby-bepasty-client.yml` or `~/.config/ruby-bepasty-client.yml`
 
 Settings from user's config will override settings in `/etc`.
 
@@ -80,4 +80,4 @@ server: https://bepasty.yourserver.tld
 bepasty server: https://bepasty-server.readthedocs.org/
 
 ## BUGS
-Report bugs to https://github.com/aither64/bepasty-client.
+Report bugs to https://github.com/aither64/ruby-bepasty-client.

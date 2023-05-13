@@ -3,7 +3,7 @@ let
   stdenv = pkgs.stdenv;
 
 in stdenv.mkDerivation rec {
-  name = "bepasty-client";
+  name = "ruby-bepasty-client";
 
   buildInputs = with pkgs;[
     ruby
