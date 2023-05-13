@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'bepasty-client'
+require 'bepasty-client/cli'
+BepastyClient::Cli.run
