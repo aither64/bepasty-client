@@ -4,6 +4,8 @@ require 'net/http'
 require 'stringio'
 
 module BepastyClient
+  class Error < StandardError ; end
+
   class Client
     BODY_SIZE = 128*1024
 
@@ -87,7 +89,7 @@ module BepastyClient
           end
 
           res = http.request(req)
-          
+
           case res
           when Net::HTTPSuccess
             if transaction_id.nil? && res['Transaction-ID']
