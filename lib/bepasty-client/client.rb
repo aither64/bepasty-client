@@ -62,7 +62,7 @@ module BepastyClient
         send_io = io
       else
         send_io = StringIO.new(io.read)
-        content_type ||= 'text/plain'
+        content_type = 'text/plain' if content_type.nil? && filename.nil?
       end
 
       if @max_file_size && send_io.size > @max_file_size
