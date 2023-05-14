@@ -72,7 +72,7 @@ server: https://bepasty.yourserver.tld
 # password: optional password if the server uses it
 # password_file: read password from a file
 # max_life:
-#   unit: days
+#   unit: minutes|hours|days|weeks|months|forever
 #   value: 14
 ```
 
