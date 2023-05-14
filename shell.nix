@@ -14,6 +14,7 @@ in stdenv.mkDerivation rec {
   shellHook = ''
     export GEM_HOME=$(pwd)/.gems
     export PATH="$GEM_HOME/bin:$PATH"
+    export MANPATH="$(pwd)/man:$(man --path)"
     gem install bundler
     bundle install
   '';
