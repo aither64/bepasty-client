@@ -59,8 +59,8 @@ Config files can be used to provide default values for certain options.
 Command-line options override settings found in config files. Config files are
 read from the following locations:
 
-  - `/etc/ruby-bepasty-client.yml`
-  - `$XDG_CONFIG_HOME/ruby-bepasty-client.yml` or `~/.config/ruby-bepasty-client.yml`
+  - `/etc/bepastyrb.yml`
+  - `$XDG_CONFIG_HOME/bepastyrb.yml` or `~/.config/bepastyrb.yml`
 
 Settings from user's config will override settings in `/etc`.
 

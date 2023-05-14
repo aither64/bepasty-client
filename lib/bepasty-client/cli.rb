@@ -129,12 +129,12 @@ module BepastyClient
     end
 
     def load_config
-      cfg = load_config_file('/etc/ruby-bepasty-client.yml')
+      cfg = load_config_file('/etc/bepastyrb.yml')
 
       conf_dir = ENV.fetch('XDG_CONFIG_HOME', '')
       conf_dir = File.join(Dir.home, '.config') if conf_dir.empty?
 
-      cfg.update(load_config_file(File.join(conf_dir, 'ruby-bepasty-client.yml')))
+      cfg.update(load_config_file(File.join(conf_dir, 'bepastyrb.yml')))
 
       @verbose = true if cfg[:verbose]
       @server ||= cfg[:server]
