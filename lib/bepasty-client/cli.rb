@@ -139,7 +139,7 @@ module BepastyClient
       @verbose = true if cfg[:verbose]
       @server ||= cfg[:server]
       @password ||= cfg[:password]
-      @max_life ||= cfg[:max_life]
+      @upload_opts[:max_life] ||= cfg[:max_life]
     end
 
     def load_config_file(path)
