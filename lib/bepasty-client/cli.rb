@@ -80,9 +80,9 @@ module BepastyClient
         parser.on(
           '--minute=[N]',
           OptionParser::DecimalInteger,
-          'Keep the file for N minutes, defaults to 15 minutes',
+          'Keep the file for N minutes, defaults to 30 minutes',
         ) do |v|
-          @upload_opts[:max_life] = {unit: :minutes, value: v || 15}
+          @upload_opts[:max_life] = {unit: :minutes, value: v || 30}
         end
 
         parser.on(

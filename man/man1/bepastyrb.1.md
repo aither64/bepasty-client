@@ -37,7 +37,7 @@ If no life time is set, it defaults to one day.
   based on file name.
 
 `--minute`=[*N*]
-  Keep the file for *N* minutes, defaults to 15 minutes.
+  Keep the file for *N* minutes, defaults to 30 minutes.
 
 `--hour`=[*N*]
   Keep the file for *N* hours, defaults to 1 hour.
