@@ -57,23 +57,23 @@ module BepastyClient
           @verbose = true
         end
 
-        parser.on('-s', '--server SERVER', 'bepasty server URL') do |v|
+        parser.on('-s', '--server=SERVER', 'bepasty server URL') do |v|
           @server = v
         end
 
-        parser.on('-p', '--password PASSWORD', 'bepasty server password') do |v|
+        parser.on('-p', '--password=PASSWORD', 'bepasty server password') do |v|
           @password = v
         end
 
-        parser.on('--password-file FILE', 'Read bepasty server password from a file') do |v|
+        parser.on('--password-file=FILE', 'Read bepasty server password from a file') do |v|
           @password = File.read(v).strip
         end
 
-        parser.on('-f', '--filename NAME', 'File name including extension') do |v|
+        parser.on('-f', '--filename=NAME', 'File name including extension') do |v|
           @upload_opts[:filename] = v
         end
 
-        parser.on('-t', '--content-type TYPE', 'Content mime type') do |v|
+        parser.on('-t', '--content-type=TYPE', 'Content mime type') do |v|
           @upload_opts[:content_type] = v
         end
 

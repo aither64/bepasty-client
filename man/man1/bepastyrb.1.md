@@ -19,20 +19,20 @@ If no life time is set, it defaults to one day.
 `-v`, `--verbose`
   Enable verbose output.
 
-`-s`, `--server` *SERVER*
+`-s`, `--server`=*SERVER*
   bepasty server URL.
 
-`-p`, `--password` *PASSWORD*
+`-p`, `--password`=*PASSWORD*
   bepasty server password.
 
-`--password-file` *FILE*
+`--password-file`=*FILE*
   Read bepasty server password from a file.
 
-`-f`, `--filename` *NAME*
+`-f`, `--filename`=*NAME*
   File name including extension. Can be used to provide name for files read
   from standard input or to override given file name.
 
-`-t`, `--content-type` *TYPE*
+`-t`, `--content-type`=*TYPE*
   Content mime type. If not given, the mime type is guessed by the bepasty server
   based on file name.
 
