@@ -143,7 +143,12 @@ module BepastyClient
     end
 
     def load_config_file(path)
-      cfg = YAML.load_file(path)
+      begin
+        cfg = YAML.load_file(path)
+      rescue Errno::ENOENT
+        return {}
+      end
+
       puts "Reading config at #{path}" if @verbose
 
       {
@@ -155,8 +160,6 @@ module BepastyClient
           value: cfg.fetch('max_life', {}).fetch('value', 1),
         },
       }
-    rescue Errno::ENOENT
-      {}
     end
   end
 end
