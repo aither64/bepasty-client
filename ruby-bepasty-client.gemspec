@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['jakub.skokan@vpsfree.cz']
   spec.summary       =
   spec.description   = 'Ruby client and CLI for bepasty'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/aither64/ruby-bepasty-client'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
